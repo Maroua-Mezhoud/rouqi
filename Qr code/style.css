@@ -1,0 +1,88 @@
+:root {
+  --bg: #f2efe5;
+  --ink: #1b1917;
+  --muted: #6e685e;
+  --line: #cfc8b9;
+  --card: #f8f6ef;
+}
+
+* { box-sizing: border-box; margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Tajawal", system-ui, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px 56px;
+}
+
+.page { width: 100%; max-width: 420px; text-align: center; }
+
+/* ---------- Brand ---------- */
+.logo {
+  width: 220px; height: 220px; max-width: 70%; height: auto;
+  border-radius: 50%;
+  display: block; margin: 0 auto 6px;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  font-size: 44px;
+  letter-spacing: .32em;
+  text-indent: .32em;          /* balances the trailing letter-spacing */
+  line-height: 1.1;
+}
+
+.bio {
+  margin: 14px auto 32px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ---------- Links ---------- */
+.links { display: grid; gap: 12px; }
+
+.btn {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 20px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 16px; font-weight: 500;
+  transition: background .2s, color .2s;
+}
+.btn svg { width: 22px; height: 22px; flex: none; }
+.btn .label { flex: 1; text-align: center; margin-right: 36px; }  /* optical centering vs. icon */
+.btn:hover { background: var(--ink); color: var(--bg); }
+
+.btn.primary { background: var(--ink); color: var(--bg); }
+.btn.primary:hover { background: transparent; color: var(--ink); }
+
+.btn:focus-visible, .place:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+/* ---------- Footer info ---------- */
+.info {
+  margin-top: 34px; padding-top: 26px;
+  border-top: 1px solid var(--line);
+  display: grid; gap: 10px; justify-items: center;
+}
+.order { color: var(--muted); font-size: 15px; }
+.place {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--ink); text-decoration: none;
+  font-size: 20px; font-weight: 500;
+}
+.place svg { width: 24px; height: 24px; }
+.place:hover { opacity: .65; }
+
+/* ---------- One entrance, on load ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .page { animation: rise .7s ease-out both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+}
