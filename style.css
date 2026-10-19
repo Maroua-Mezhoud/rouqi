@@ -21,20 +21,22 @@ body {
 
 .page { width: 100%; max-width: 420px; text-align: center; }
 
-/* ---------- Brand ---------- */
-.logo {
-  width: 220px; height: 220px; max-width: 70%; height: auto;
-  border-radius: 50%;
-  display: block; margin: 0 auto 6px;
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
-h1 {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-weight: 600;
-  font-size: 44px;
-  letter-spacing: .32em;
-  text-indent: .32em;          /* balances the trailing letter-spacing */
-  line-height: 1.1;
+/* ---------- Brand ---------- */
+.logo {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  display: block;
+  margin: 0 auto 4px;
+  mix-blend-mode: multiply;   /* blends the white background into the beige page */
 }
 
 .bio {
@@ -80,6 +82,15 @@ h1 {
 }
 .place svg { width: 24px; height: 24px; }
 .place:hover { opacity: .65; }
+
+/* ---------- Credit ---------- */
+.credit {
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 13px;
+  letter-spacing: .04em;
+  opacity: .8;
+}
 
 /* ---------- One entrance, on load ---------- */
 @media (prefers-reduced-motion: no-preference) {
